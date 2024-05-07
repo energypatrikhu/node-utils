@@ -1,0 +1,32 @@
+{
+	"name": "@energypatrikhu/node-utils",
+	"version": "0.0.0",
+	"description": "A collection of energy's useful utility functions",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "node esbuild.config.mjs && tsc",
+		"np": "np --no-tests"
+	},
+	"files": [
+		"build"
+	],
+	"devDependencies": {
+		"@types/node": "^20.12.10",
+		"esbuild": "^0.21.0",
+		"np": "^10.0.5",
+		"typescript": "^5.4.5"
+	},
+	"author": "energypatrikhu",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/energypatrikhu/node-utils.git"
+	},
+	"bugs": {
+		"url": "https://github.com/energypatrikhu/node-utils/issues"
+	},
+	"homepage": "https://github.com/energypatrikhu/node-utils",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	}
+}
