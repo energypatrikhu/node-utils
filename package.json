@@ -4,15 +4,15 @@
 	"description": "A collection of energy's useful utility functions",
 	"main": "build/index.js",
 	"scripts": {
-		"build": "node esbuild.config.mjs && tsc",
+		"build": "esbuild-wrapper && tsc",
 		"np": "np --no-tests"
 	},
 	"files": [
 		"build"
 	],
 	"devDependencies": {
+		"@energypatrikhu/esbuild-wrapper": "^0.0.4",
 		"@types/node": "^20.12.10",
-		"esbuild": "^0.21.0",
 		"np": "^10.0.5",
 		"typescript": "^5.4.5"
 	},
