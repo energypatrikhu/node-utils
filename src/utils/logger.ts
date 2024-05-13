@@ -8,11 +8,7 @@ const loggerTypeMap = {
 };
 
 function isDataObject(data: any): boolean {
-	if (
-		typeof window !== 'undefined' &&
-		typeof window.document !== 'undefined' &&
-		data instanceof Element
-	) {
+	if (typeof window !== 'undefined' && typeof window.document !== 'undefined' && data instanceof Element) {
 		return false;
 	}
 
@@ -27,9 +23,7 @@ function isDataObject(data: any): boolean {
  * @returns The formatted log line.
  */
 export function logger(loggerType: LoggerType, ...data: any): string {
-	const formattedData = data.map((_data: any) =>
-		isDataObject(_data) ? JSON.stringify(_data, null, '\t') : _data,
-	);
+	const formattedData = data.map((_data: any) => (isDataObject(_data) ? JSON.stringify(_data, null, '\t') : _data));
 
 	const logLinePrefix = `[${getTimestamp()}] ${loggerTypeMap[loggerType]}`;
 

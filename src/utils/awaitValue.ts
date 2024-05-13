@@ -5,10 +5,7 @@
  * @param value - The value to wait for.
  * @returns A promise that resolves to the awaited value or `undefined` if the value is not found.
  */
-export async function awaitValue<T>(
-	_function: () => Promise<T> | T,
-	value: T,
-): Promise<T | undefined> {
+export async function awaitValue<T>(_function: () => Promise<T> | T, value: T): Promise<T | undefined> {
 	return new Promise<T | undefined>((resolve) => {
 		const _awaiter = setInterval(async () => {
 			const result = await _function();

@@ -8,8 +8,6 @@ export function timeToSec(timeStr: string) {
 	return timeStr
 		.split(':')
 		.reverse()
-		.map((x: string, i: number) =>
-			i != 0 ? parseInt(x) * 60 ** i : parseInt(x),
-		)
+		.map((x: string, i: number) => (i != 0 ? parseInt(x) * 60 ** i : parseInt(x)))
 		.reduce((a: number, b: number) => a + b);
 }

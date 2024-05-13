@@ -7,10 +7,7 @@ import { numPrefix } from './numPrefix';
  * @param format - The format string for the output. Defaults to '{HH}:{MM}:{SS}'.
  * @returns The formatted time string.
  */
-export function secToTime(
-	sec: number,
-	format: string = '{HH}:{MM}:{SS}',
-): string {
+export function secToTime(sec: number, format: string = '{HH}:{MM}:{SS}'): string {
 	if (sec < 0) sec = 0;
 
 	const days = Math.floor(sec / (60 ** 2 * 24));

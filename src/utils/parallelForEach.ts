@@ -75,21 +75,16 @@ export function parallelForEach<T>(
 		}
 
 		// Get next pending entry to process with index and value
-		const getNextPending = () =>
-			[...entries.values()].find((entry) => entry.state === 'pending');
+		const getNextPending = () => [...entries.values()].find((entry) => entry.state === 'pending');
 
 		// Get length of entries by state
-		const getLengthByState = (state: string) =>
-			[...entries.values()].filter((entry) => entry.state === state)
-				.length;
+		const getLengthByState = (state: string) => [...entries.values()].filter((entry) => entry.state === state).length;
 
 		// Remove processed entry to free up memory
 		const remove = (index: number) => {
 			log('Removing entry');
 
-			const entry = [...entries.values()].find(
-				(entry) => entry.index === index,
-			);
+			const entry = [...entries.values()].find((entry) => entry.index === index);
 			if (entry) entries.delete(entry);
 
 			// Resolve promise if all entries are processed
@@ -98,11 +93,7 @@ export function parallelForEach<T>(
 
 		// Process entries
 		const processEntries = async () => {
-			if (
-				entries.size === 0 ||
-				getLengthByState('processing') === __maxWorkers
-			)
-				return;
+			if (entries.size === 0 || getLengthByState('processing') === __maxWorkers) return;
 
 			const entry = getNextPending();
 			if (!entry) return;

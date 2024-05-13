@@ -29,12 +29,7 @@ class Bjson {
 	 * @returns The deserialized value for Set and Map data types, or the original value for other types.
 	 */
 	private reviver(_key: string, value: any) {
-		if (
-			value !== null &&
-			typeof value === 'object' &&
-			!Array.isArray(value) &&
-			'dataType' in value
-		) {
+		if (value !== null && typeof value === 'object' && !Array.isArray(value) && 'dataType' in value) {
 			switch (value.dataType) {
 				case 'Set':
 					return new Set(value.value);

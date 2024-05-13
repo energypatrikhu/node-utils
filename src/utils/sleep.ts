@@ -9,9 +9,7 @@ import { randomNumber } from './randomNumber';
  * @returns A promise that resolves after the specified duration.
  */
 export function sleep(msMin: number, msMax?: number): Promise<void> {
-	const timeout =
-		Math.abs(msMin) +
-		(!!msMax ? randomNumber(Math.abs(msMax - msMin + 1)) : 0);
+	const timeout = Math.abs(msMin) + (!!msMax ? randomNumber(Math.abs(msMax - msMin + 1)) : 0);
 
 	return new Promise((resolve) => setTimeout(resolve, timeout));
 }
