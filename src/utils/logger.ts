@@ -1,3 +1,5 @@
+import { getCurrentTime } from './getCurrentTime';
+
 type LoggerType = 'info' | 'warn' | 'error';
 const loggerTypeMap = {
 	info: '[INFO]',
@@ -23,7 +25,7 @@ function isDataObject(data: any): boolean {
 export function logger(loggerType: LoggerType, ...data: any): string {
 	const formattedData = data.map((_data: any) => (isDataObject(_data) ? JSON.stringify(_data, null, '\t') : _data));
 
-	const logLinePrefix = `[${new Date().toLocaleString()}] ${loggerTypeMap[loggerType]}`;
+	const logLinePrefix = `[${getCurrentTime()}] ${loggerTypeMap[loggerType]}`;
 
 	console.log(logLinePrefix, ...formattedData);
 
