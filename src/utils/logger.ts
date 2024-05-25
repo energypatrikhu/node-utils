@@ -1,5 +1,3 @@
-import { getTimestamp } from './getTimestamp';
-
 type LoggerType = 'info' | 'warn' | 'error';
 const loggerTypeMap = {
 	info: '[INFO]',
@@ -25,7 +23,7 @@ function isDataObject(data: any): boolean {
 export function logger(loggerType: LoggerType, ...data: any): string {
 	const formattedData = data.map((_data: any) => (isDataObject(_data) ? JSON.stringify(_data, null, '\t') : _data));
 
-	const logLinePrefix = `[${getTimestamp()}] ${loggerTypeMap[loggerType]}`;
+	const logLinePrefix = `[${new Date().toLocaleString()}] ${loggerTypeMap[loggerType]}`;
 
 	console.log(logLinePrefix, ...formattedData);
 
