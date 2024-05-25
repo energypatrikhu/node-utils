@@ -20,5 +20,5 @@ export function getCurrentTime(): string {
  * @returns The formatted date and time string.
  */
 export function getDateTimeString() {
-	return getCurrentTime().replace(/(\.\s|:|,)/g, '.');
+	return getCurrentTime().replace(/(\.\s|:)/g, '.');
 }
