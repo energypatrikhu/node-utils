@@ -12,7 +12,7 @@
 	],
 	"devDependencies": {
 		"@energypatrikhu/esbuild-wrapper": "^0.0.4",
-		"@types/node": "^20.12.11",
+		"@types/node": "^20.12.12",
 		"np": "^10.0.5",
 		"typescript": "^5.4.5"
 	},
