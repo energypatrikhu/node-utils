@@ -8,8 +8,14 @@ import { randomNumber } from './randomNumber';
  * @param msMax - The maximum duration in milliseconds (optional).
  * @returns A promise that resolves after the specified duration.
  */
+export function sleep(msMin: number): Promise<void>;
+export function sleep(msMin: number, msMax: number): Promise<void>;
 export function sleep(msMin: number, msMax?: number): Promise<void> {
-	const timeout = Math.abs(msMin) + (!!msMax ? randomNumber(Math.abs(msMax - msMin + 1)) : 0);
+	if (msMax === undefined) {
+		return new Promise((resolve) => setTimeout(resolve, msMin));
+	}
+
+	const timeout = msMin + randomNumber(msMax - msMin + 1);
 
 	return new Promise((resolve) => setTimeout(resolve, timeout));
 }
