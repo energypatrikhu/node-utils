@@ -7,5 +7,6 @@
  */
 export function numPrefix(num: number, placeholders: number = 0): string {
   if (num < 0) num = 0;
+  if (placeholders < 0) placeholders = 0;
   return '0'.repeat(placeholders - (placeholders > 1 ? num.toString().length : 1)) + num;
 }
