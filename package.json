@@ -1,32 +1,32 @@
 {
-	"name": "@energypatrikhu/node-utils",
-	"version": "0.1.14",
-	"description": "A collection of energy's useful utility functions",
-	"main": "build/index.js",
-	"scripts": {
-		"build": "esbuild-wrapper && tsc",
-		"np": "np --no-tests"
-	},
-	"files": [
-		"build"
-	],
-	"devDependencies": {
-		"@energypatrikhu/esbuild-wrapper": "^0.0.4",
-		"@types/node": "^20.14.12",
-		"np": "^10.0.7",
-		"typescript": "^5.5.4"
-	},
-	"author": "energypatrikhu",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/energypatrikhu/node-utils.git"
-	},
-	"bugs": {
-		"url": "https://github.com/energypatrikhu/node-utils/issues"
-	},
-	"homepage": "https://github.com/energypatrikhu/node-utils",
-	"license": "MIT",
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@energypatrikhu/node-utils",
+  "version": "0.1.14",
+  "description": "A collection of energy's useful utility functions",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "esbuild-wrapper && tsc",
+    "np": "np --no-tests --no-cleanup"
+  },
+  "files": [
+    "build"
+  ],
+  "devDependencies": {
+    "@energypatrikhu/esbuild-wrapper": "^0.0.4",
+    "@types/node": "^20.14.12",
+    "np": "^10.0.7",
+    "typescript": "^5.5.4"
+  },
+  "author": "energypatrikhu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energypatrikhu/node-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/energypatrikhu/node-utils/issues"
+  },
+  "homepage": "https://github.com/energypatrikhu/node-utils",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
