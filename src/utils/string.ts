@@ -93,6 +93,13 @@ export function startsWith(string: string | Array<string>, searchString: string 
   return false;
 }
 
+/**
+ * Checks if a string or an array of strings ends with a specific value.
+ *
+ * @param string - The string or array of strings to check.
+ * @param searchString - The value or array of values to check for at the end of the string(s).
+ * @returns A boolean indicating whether the string or array of strings ends with the specified value(s).
+ */
 export function endsWith(string: string | Array<string>, searchString: string | Array<string>) {
   if (typeof searchString === 'string' && typeof string === 'string' && string.endsWith(searchString)) {
     return true;
@@ -109,6 +116,37 @@ export function endsWith(string: string | Array<string>, searchString: string | 
   if (typeof searchString === 'string' && Array.isArray(string)) {
     for (const str of string) {
       if (str.endsWith(searchString)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+/**
+ * Checks if a string or an array of strings is equal to a specific value.
+ *
+ * @param string - The string or array of strings to check.
+ * @param searchString - The value or array of values to check for equality with the string(s).
+ * @returns A boolean indicating whether the string or array of strings is equal to the specified value(s).
+ */
+export function is(string: string | Array<string>, searchString: string | Array<string> | undefined = undefined) {
+  if (typeof searchString === 'string' && typeof string === 'string' && string === searchString) {
+    return true;
+  }
+
+  if (Array.isArray(searchString) && typeof string === 'string') {
+    for (const search of searchString) {
+      if (string === search) {
+        return true;
+      }
+    }
+  }
+
+  if (typeof searchString === 'string' && Array.isArray(string)) {
+    for (const str of string) {
+      if (str === searchString) {
         return true;
       }
     }
