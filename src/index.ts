@@ -1,5 +1,6 @@
 export * from './utils/global';
-export * from './utils/str';
+export * from './utils/string';
+export * from './utils/array';
 export * from './utils/approx';
 export * from './utils/awaitValue';
 export * from './utils/compare';
