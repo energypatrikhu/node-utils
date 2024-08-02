@@ -131,7 +131,7 @@ export function endsWith(string: string | Array<string>, searchString: string | 
  * @param searchString - The value or array of values to check for equality with the string(s).
  * @returns A boolean indicating whether the string or array of strings is equal to the specified value(s).
  */
-export function is(string: string | Array<string>, searchString: string | Array<string> | undefined = undefined) {
+export function isValue(string: string | Array<string>, searchString: string | Array<string> | undefined = undefined) {
   if (typeof searchString === 'string' && typeof string === 'string' && string === searchString) {
     return true;
   }
