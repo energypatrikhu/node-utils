@@ -11,10 +11,10 @@
     "build"
   ],
   "devDependencies": {
-    "@energypatrikhu/esbuild-wrapper": "^0.0.4",
-    "@types/node": "^20.14.12",
-    "np": "^10.0.7",
-    "typescript": "^5.5.4"
+    "@energypatrikhu/esbuild-wrapper": "0.0.10",
+    "@types/node": "22.10.2",
+    "np": "10.1.0",
+    "typescript": "5.7.2"
   },
   "author": "energypatrikhu",
   "repository": {
